@@ -1,0 +1,18 @@
+
+server:
+  port: 9000
+  shutdown: graceful
+
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS, localhost:9092}  // ${} tells spring these are either sys props or env variables.
+  application:
+    name: lw-kafka-broker
+  main:
+    web-application-type: none
+
+lw-kafka-broker:
+  port-1: 9092
+  port-2: 9093
+  port-3: 9094
+  bootstrap-address: localhost:9092
