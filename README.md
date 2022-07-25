@@ -1,4 +1,4 @@
-# Kafka Light Weight Broker.
+# Light-Weight Kafka Broker.
 
 Want to do some local kafka development?
 
@@ -13,7 +13,7 @@ Then this is for you.
 
 ### Installation
 
-    git clone https://github.com/greenstevester/lightweight-kafka-broker
+    git clone git@github.com:greenstevester/lw-kafka-broker.git
     ./gradlew clean build
 
 ### Running
