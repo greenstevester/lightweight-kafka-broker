@@ -6,8 +6,7 @@ plugins {
 }
 
 group = 'net.greensill'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+version = '0.0.1'
 
 configurations {
 	compileOnly {

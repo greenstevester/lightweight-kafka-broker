@@ -1,6 +1,8 @@
 package net.greensill.lwkb.config;
 
+import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
+import org.apache.kafka.clients.admin.ListTopicsResult;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,10 +17,17 @@ public class KafkaConfig {
     @Value(value="${lw-kafka-broker.bootstrap-address}")
     private String bootstrapAddress;
 
+    Map<String, Object> configs = new HashMap<>();
+
     @Bean
     public KafkaAdmin kafkaAdmin() {
-        Map<String, Object> configs = new HashMap<>();
         configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG,bootstrapAddress);
         return new KafkaAdmin(configs);
     }
+
+    @Bean AdminClient adminClient() {
+        AdminClient admin = AdminClient.create(configs);
+        return admin;
+    }
+
 }
